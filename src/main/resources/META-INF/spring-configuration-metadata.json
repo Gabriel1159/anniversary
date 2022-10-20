@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "crawler.medicine.detailUrl",
+      "type": "java.lang.String",
+      "description": "Description for crawler.medicine.detailUrl."
+  }
+] }
