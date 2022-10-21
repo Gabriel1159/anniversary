@@ -38,8 +38,9 @@ public class TableService {
         return 0;
     }
 
-    public int giveDistance(int stuID) {
+    public int giveDistance(int stuID, String time) {
         try {
+            tableMapper.setTime(stuID, time);
             return tableMapper.giveDistance(stuID);
         } catch (Exception e) {
             e.printStackTrace();

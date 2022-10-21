@@ -17,4 +17,6 @@ public interface TableMapper {
     int giveDistance(int stuID);
 
     Student queryRecordByID(int stuID);
+
+    void setTime(int stuID, String time);
 }

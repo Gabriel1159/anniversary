@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Date;
 
 @RestController
 public class TableController {
@@ -68,7 +70,9 @@ public class TableController {
     @RequestMapping(value = "/giveDistance", method = RequestMethod.POST)
     public int giveDistance(int stuID)
     {
-        return tableService.giveDistance(stuID);
+        Date date = new Date();
+        SimpleDateFormat myformat = new SimpleDateFormat("yyyyMMddHHmmss");
+        return tableService.giveDistance(stuID, myformat.format(date));
     }
 
     @RequestMapping(value = "/queryRecordByID", method = RequestMethod.POST)

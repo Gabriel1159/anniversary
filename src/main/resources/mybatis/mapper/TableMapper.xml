@@ -8,6 +8,11 @@
         set status=1
         where stu_id=#{stuID};
     </update>
+    <update id="setTime">
+        update test_info
+        set date=#{time}
+        where stu_id=#{stuID};
+    </update>
     <select id="getAllRecords" resultType="com.example.anniversary_backend.pojo.Student">
         select * from test_info where status=1;
     </select>

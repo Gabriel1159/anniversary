@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.anniversary_backend.mapper.DataInputMapper">
+    <insert id="addRecord" parameterType="com.example.anniversary_backend.pojo.Student">
+        insert into test_info(stu_id, stu_name, distance, status)
+        values(#{stu_id}, #{stu_name}, #{distance}, #{status});
+    </insert>
+</mapper>
