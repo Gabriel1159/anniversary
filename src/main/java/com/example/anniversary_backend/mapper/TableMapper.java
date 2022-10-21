@@ -12,7 +12,7 @@ public interface TableMapper {
 
     double sumAllRecords();
 
-    double sumGivenRecords();
+    ArrayList<Student> sumGivenRecords();
 
     int giveDistance(int stuID);
 

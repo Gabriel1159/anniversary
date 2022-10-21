@@ -64,6 +64,7 @@ public class TableController {
     {
         double totalDistance = tableService.sumAllRecords();
         double givenDistance = tableService.sumGivenRecords();
+
         return givenDistance/totalDistance;
     }
 

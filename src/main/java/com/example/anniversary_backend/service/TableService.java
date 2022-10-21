@@ -31,7 +31,8 @@ public class TableService {
     public double sumGivenRecords()
     {
         try {
-            return tableMapper.sumGivenRecords();
+            ArrayList<Student> ret = tableMapper.sumGivenRecords();
+            return ret.size();
         } catch (Exception e) {
             e.printStackTrace();
         }
