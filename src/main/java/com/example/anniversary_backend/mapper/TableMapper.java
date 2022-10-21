@@ -9,4 +9,12 @@ import java.util.ArrayList;
 public interface TableMapper {
 
     ArrayList<Student> getAllRecords();
+
+    double sumAllRecords();
+
+    double sumGivenRecords();
+
+    int giveDistance(int stuID);
+
+    Student queryRecordByID(int stuID);
 }

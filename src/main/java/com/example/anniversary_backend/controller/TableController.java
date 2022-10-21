@@ -3,7 +3,6 @@ package com.example.anniversary_backend.controller;
 import com.example.anniversary_backend.pojo.Student;
 import com.example.anniversary_backend.service.TableService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -56,6 +55,26 @@ public class TableController {
             ret = (ArrayList<Student>) ret.subList(0, 9);
         }
         return ret;
+    }
+
+    @RequestMapping(value = "/getPercentage", method = RequestMethod.POST)
+    public double getPercentage()
+    {
+        double totalDistance = tableService.sumAllRecords();
+        double givenDistance = tableService.sumGivenRecords();
+        return givenDistance/totalDistance;
+    }
+
+    @RequestMapping(value = "/giveDistance", method = RequestMethod.POST)
+    public int giveDistance(int stuID)
+    {
+        return tableService.giveDistance(stuID);
+    }
+
+    @RequestMapping(value = "/queryRecordByID", method = RequestMethod.POST)
+    public Student queryRecordByID(int stuID)
+    {
+        return tableService.queryRecordByID(stuID);
     }
 
 }

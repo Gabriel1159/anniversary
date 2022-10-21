@@ -3,7 +3,21 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.anniversary_backend.mapper.TableMapper">
+    <update id="giveDistance">
+        update test_info
+        set status=1
+        where stu_id=#{stuID};
+    </update>
     <select id="getAllRecords" resultType="com.example.anniversary_backend.pojo.Student">
-        select * from test_info;
+        select * from test_info where status=1;
+    </select>
+    <select id="sumAllRecords" resultType="java.lang.Double">
+        select sum(distance) from test_info;
+    </select>
+    <select id="sumGivenRecords" resultType="java.lang.Double">
+        select sum(distance) from test_info where status=1;
+    </select>
+    <select id="queryRecordByID" resultType="com.example.anniversary_backend.pojo.Student">
+        select * from test_info where stu_id=#{stuID};
     </select>
 </mapper>

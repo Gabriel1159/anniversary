@@ -19,4 +19,40 @@ public class TableService {
         }
         return null;
     }
+    public double sumAllRecords()
+    {
+        try {
+            return tableMapper.sumAllRecords();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    public double sumGivenRecords()
+    {
+        try {
+            return tableMapper.sumGivenRecords();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public int giveDistance(int stuID) {
+        try {
+            return tableMapper.giveDistance(stuID);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public Student queryRecordByID(int stuID) {
+        try {
+            return tableMapper.queryRecordByID(stuID);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

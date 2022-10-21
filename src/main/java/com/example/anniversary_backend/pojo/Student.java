@@ -1,12 +1,11 @@
 package com.example.anniversary_backend.pojo;
 
-import java.sql.Date;
-
 public class Student {
     private int stu_id;
     private String stu_name;
     private double distance;
     private String date;
+    private int status;   //0 未贡献， 1 已贡献
 
     public int getStuID() {
         return stu_id;
@@ -38,6 +37,14 @@ public class Student {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     @Override
