@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -64,8 +65,9 @@ public class TableController {
     {
         double totalDistance = tableService.sumAllRecords();
         double givenDistance = tableService.sumGivenRecords();
-
-        return givenDistance/totalDistance;
+        DecimalFormat decimalFormat = new DecimalFormat("0.000");
+        double ret = givenDistance/totalDistance;
+        return Double.parseDouble(decimalFormat.format(ret));
     }
 
     @RequestMapping(value = "/giveDistance", method = RequestMethod.POST)
