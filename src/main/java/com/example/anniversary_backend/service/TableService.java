@@ -31,8 +31,13 @@ public class TableService {
     public double sumGivenRecords()
     {
         try {
+            double res = 0;
             ArrayList<Student> ret = tableMapper.sumGivenRecords();
-            return ret.size();
+            for(int i=0;i<ret.size();i++)
+            {
+                res += ret.get(i).getStuDistance();
+            }
+            return res;
         } catch (Exception e) {
             e.printStackTrace();
         }
