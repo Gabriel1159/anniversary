@@ -74,7 +74,7 @@ public class TableController {
     public int giveDistance(int stuID)
     {
         Date date = new Date();
-        SimpleDateFormat myformat = new SimpleDateFormat("yyyyMMddHHmmss");
+        SimpleDateFormat myformat = new SimpleDateFormat("HH:mm:ss");
         return tableService.giveDistance(stuID, myformat.format(date));
     }
 
