@@ -3,6 +3,7 @@ package com.example.anniversary_backend.controller;
 import com.example.anniversary_backend.pojo.Student;
 import com.example.anniversary_backend.service.TableService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import java.util.Comparator;
 import java.util.Date;
 
 @RestController
+@CrossOrigin
 public class TableController {
     @Autowired
     TableService tableService;
