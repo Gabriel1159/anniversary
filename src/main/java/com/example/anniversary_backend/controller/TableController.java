@@ -28,8 +28,6 @@ public class TableController {
     static class MyComparator2 implements Comparator<Student> {
         @Override
         public int compare(Student s1, Student s2) {
-            System.out.println(s1.getDate());
-            System.out.println(s2.getDate());
             return -s1.getDate().compareTo(s2.getDate());
         }
     }
@@ -41,9 +39,14 @@ public class TableController {
         ret = tableService.getAllRecords();
         MyComparator1 comparator_1 = new MyComparator1();
         ret.sort(comparator_1);
+        ArrayList<Student> ret1 = new ArrayList<>();
         if(ret.size()>10)
         {
-            ret = (ArrayList<Student>) ret.subList(0, 9);
+            for(int i=0; i<10; i++)
+            {
+                ret1.add(ret.get(i));
+            }
+            return ret1;
         }
         return ret;
     }
@@ -55,9 +58,14 @@ public class TableController {
         ret = tableService.getAllRecords();
         MyComparator2 comparator_2 = new MyComparator2();
         ret.sort(comparator_2);
+        ArrayList<Student> ret1 = new ArrayList<>();
         if(ret.size()>10)
         {
-            ret = (ArrayList<Student>) ret.subList(0, 9);
+            for(int i=0; i<10; i++)
+            {
+                ret1.add(ret.get(i));
+            }
+            return ret1;
         }
         return ret;
     }
@@ -75,6 +83,7 @@ public class TableController {
     @RequestMapping(value = "/giveDistance", method = RequestMethod.POST)
     public int giveDistance(int stuID)
     {
+        System.out.println(stuID);
         Date date = new Date();
         SimpleDateFormat myformat = new SimpleDateFormat("HH:mm:ss");
         return tableService.giveDistance(stuID, myformat.format(date));

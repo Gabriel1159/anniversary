@@ -56,7 +56,17 @@ public class TableService {
 
     public Student queryRecordByID(int stuID) {
         try {
-            return tableMapper.queryRecordByID(stuID);
+            Student ret = tableMapper.queryRecordByID(stuID);
+            if(ret==null)
+            {
+                ret = new Student();
+                ret.setStatus(-1);
+                return ret;
+            }
+            else
+            {
+                return ret;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
