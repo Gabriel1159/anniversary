@@ -46,7 +46,10 @@ public class DataInputController {
                 s.setStuName(row.getCell(1).getStringCellValue());
                 s.setStuDistance(row.getCell(2).getNumericCellValue());
                 s.setStatus(0);
-                students.add(s);
+                if(s.getStuDistance()!=0)
+                {
+                    students.add(s);
+                }
             }
             inputStream.close();
         } catch (IOException e) {
