@@ -37,6 +37,7 @@ public class TableController {
     {
         ArrayList<Student> ret = new ArrayList<>();
         ret = tableService.getAllRecords();
+        System.out.println(ret);
         MyComparator1 comparator_1 = new MyComparator1();
         ret.sort(comparator_1);
         ArrayList<Student> ret1 = new ArrayList<>();
@@ -85,15 +86,13 @@ public class TableController {
     {
         Date date = new Date();
         SimpleDateFormat myformat = new SimpleDateFormat("HH:mm:ss");
-        int stu_id = Integer.parseInt(stuID);
-        return tableService.giveDistance(stu_id, myformat.format(date));
+        return tableService.giveDistance(stuID, myformat.format(date));
     }
 
     @RequestMapping(value = "/queryRecordByID", method = RequestMethod.POST)
     public Student queryRecordByID(String stuID)
     {
-        int stu_id = Integer.parseInt(stuID);
-        return tableService.queryRecordByID(stu_id);
+        return tableService.queryRecordByID(stuID);
     }
 
 }

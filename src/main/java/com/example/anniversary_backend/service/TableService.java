@@ -44,7 +44,7 @@ public class TableService {
         return 0;
     }
 
-    public int giveDistance(int stuID, String time) {
+    public int giveDistance(String stuID, String time) {
         try {
             tableMapper.setTime(stuID, time);
             return tableMapper.giveDistance(stuID);
@@ -54,7 +54,7 @@ public class TableService {
         return 0;
     }
 
-    public Student queryRecordByID(int stuID) {
+    public Student queryRecordByID(String stuID) {
         try {
             Student ret = tableMapper.queryRecordByID(stuID);
             if(ret==null)

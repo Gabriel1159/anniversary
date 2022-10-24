@@ -14,9 +14,9 @@ public interface TableMapper {
 
     ArrayList<Student> sumGivenRecords();
 
-    int giveDistance(int stuID);
+    int giveDistance(String stuID);
 
-    Student queryRecordByID(int stuID);
+    Student queryRecordByID(String stuID);
 
-    void setTime(int stuID, String time);
+    void setTime(String stuID, String time);
 }

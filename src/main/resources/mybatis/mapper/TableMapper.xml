@@ -14,7 +14,7 @@
         where stu_id=#{stuID};
     </update>
     <select id="getAllRecords" resultType="com.example.anniversary_backend.pojo.Student">
-        select * from test_info where status=1;
+        select * from test_info where status=1 and date!="";
     </select>
     <select id="sumAllRecords" resultType="java.lang.Double">
         select sum(distance) from test_info;
