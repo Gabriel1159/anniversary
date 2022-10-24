@@ -81,18 +81,19 @@ public class TableController {
     }
 
     @RequestMapping(value = "/giveDistance", method = RequestMethod.POST)
-    public int giveDistance(int stuID)
+    public int giveDistance(String stuID)
     {
-        System.out.println(stuID);
         Date date = new Date();
         SimpleDateFormat myformat = new SimpleDateFormat("HH:mm:ss");
-        return tableService.giveDistance(stuID, myformat.format(date));
+        int stu_id = Integer.parseInt(stuID);
+        return tableService.giveDistance(stu_id, myformat.format(date));
     }
 
     @RequestMapping(value = "/queryRecordByID", method = RequestMethod.POST)
-    public Student queryRecordByID(int stuID)
+    public Student queryRecordByID(String stuID)
     {
-        return tableService.queryRecordByID(stuID);
+        int stu_id = Integer.parseInt(stuID);
+        return tableService.queryRecordByID(stu_id);
     }
 
 }
